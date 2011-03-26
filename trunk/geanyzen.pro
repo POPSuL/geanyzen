@@ -20,14 +20,14 @@ CONFIG += plugin
 CONFIG += link_pkgconfig
 PKGCONFIG += geany
 
+zen.files    += zencoding
+zen.path     += /usr/lib/geany-plugins/geanyzen
+
 plugin.files += build/libgeanyzen.so
-plugin.path  += /usr/lib/geany/
+plugin.path  += /usr/lib/geany
 
 plugin1.files += build/libgeanyzen.so
 plugin1.path  += /usr/lib/geany-plugins/geanyzen
-
-zen.files    += zencoding
-zen.path     += /usr/lib/geany-plugins/geanyzen
 
 INSTALLS     += plugin
 INSTALLS     += zen
