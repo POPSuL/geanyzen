@@ -33,8 +33,10 @@ def expand(line, currpos, mime):
         expanded = zen_core.expand_abbreviation(abbrlist[0], etype)
         if(expanded == ''):
             raise
-        line = line.replace(abbrlist[0], expanded)
-        currentPosition = line.find(expanded) + expanded.__len__()
+        #line = line.replace(abbrlist[0], expanded)
+        abrlen = abbrlist[0].__len__()
+        line = expanded.join([line[:currpos-abrlen], line[currpos:]])
+        currentPosition = line.find(expanded, currpos-abrlen) + expanded.__len__()
         dpos = line.find('|')
         if(dpos != -1):
             currentPosition = dpos
